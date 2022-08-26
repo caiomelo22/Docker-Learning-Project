@@ -1,0 +1,27 @@
+docker build ./python-app
+
+docker images 
+# To get the created image id
+
+docker run -it 9947440ce7ee  
+# Running in interactive mode with '-it'
+
+docker ps -a
+# Get all of the stopped containers names in order to delete them
+
+docker rm pedantic_turing objective_gagarin gracious_fermi globus-back_app_1 interesting_williams interesting_mclaren epic_noether romantic_nobel crazy_golick eager_lumiere cranky_agnesi beautiful_neumann
+
+docker images
+# To get the images names in order to delete them
+
+docker rmi 9947440ce7ee 82e0c1a1d352 770e822f4fca a772171d7570 2db79a0af66b 2a2f9e9ca73c f9f0a64f7b7f f523c33a55fa 770e822f4fca a772171d7570 2db79a0af66b 2a2f9e9ca73c f9f0a64f7b7f f523c33a55fa d6200af973ac c43fbe14ab5b d9fcfb809409 4f7f682a66b8 7fc117868723
+# Removing images
+
+docker build -t test:python ./python-app
+# Rebuild image with name:tag
+
+docker run -it --rm --name python_container test:python
+# Run named container with named built image
+
+docker image prune -a
+# Deletes all of the images
